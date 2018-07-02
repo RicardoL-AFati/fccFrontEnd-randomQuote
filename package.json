@@ -1,0 +1,37 @@
+{
+  "name": "randomquote",
+  "version": "1.0.0",
+  "description": "page that generates random ron swanson quotes",
+  "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=production webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RicardoL-AFati/fccFrontEnd-randomQuote.git"
+  },
+  "author": "Ricardo Ledesma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RicardoL-AFati/fccFrontEnd-randomQuote/issues"
+  },
+  "homepage": "https://github.com/RicardoL-AFati/fccFrontEnd-randomQuote#readme",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^4.14.0",
+    "webpack-cli": "^3.0.8"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-promise": "^0.6.0"
+  }
+}
