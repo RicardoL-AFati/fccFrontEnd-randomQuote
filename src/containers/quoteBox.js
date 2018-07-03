@@ -4,19 +4,22 @@ import { bindActionCreators } from 'redux';
 import { getQuote } from '../actions/index';
 
 class QuoteBox extends Component {
+  // Calling action creator on page load once component mounts
   componentDidMount() {
     this.props.getQuote();
   }
-
+  // Fetching new quote action creator on button click
   onQuoteClick() {
     this.props.getQuote();
   }
-
+  // Previous tweet implementation. Changed for FCC
   // onTwitterClick() {
   //   window.open(`https://twitter.com/intent/tweet?text="${this.props.quote}" - ${this.props.author}`);
   // }
   render() {
+    // url to tweet current quote and 'author'
     const twitterLink = `https://twitter.com/intent/tweet?text="${this.props.quote}" - ${this.props.author}`;
+    // Quote and Author are from state (mapped to props) new-quote calls action creator
     return (
       <div className='border border-primary rounded' id='quote-box'>
         <h6 id='text'><i class="fas fa-quote-left fa-lg"></i>{this.props.quote}<i class="fas fa-quote-right fa-lg"></i></h6>
@@ -27,13 +30,13 @@ class QuoteBox extends Component {
     );
   };
 }
-
+// State (quote and author properties) is mapped to this containers props
 function mapStateToProps({ quote, author }) {
  return { quote, author };
 }
-
+// Binding getQuote to dispatch to send action to reducers. Also to props
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ getQuote }, dispatch);
 }
-
+// Creating container by connecting react component to state (redux)
 export default connect (mapStateToProps, mapDispatchToProps)(QuoteBox);
